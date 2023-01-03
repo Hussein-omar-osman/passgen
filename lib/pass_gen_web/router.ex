@@ -5,8 +5,9 @@ defmodule PassGenWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", PassGenWeb do
+  scope "/", PassGenWeb do
     pipe_through :api
+    get "/", PassController, :pass
   end
 
   # Enables LiveDashboard only for development
