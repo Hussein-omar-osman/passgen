@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :pass_gen, PassGen.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "mwas6190",
   hostname: "localhost",
   database: "pass_gen_dev",
   stacktrace: true,
