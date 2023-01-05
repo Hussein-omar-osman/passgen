@@ -46,11 +46,21 @@ defmodule PasswordGenerator do
   defp validate_length(options) do
     case Map.has_key?(options, "length") do
       true ->
-        options
+        check_length_value(options)
 
       false ->
         {:error, "Please provide a length"}
     end
+  end
+
+  # Checks if length's value is less than 5, returns the options or {:error, error}
+  defp check_length_value(options) do
+    case String.to_integer(options["length"]) < 5 do
+      true -> {:error, "length can't be less than 5"}
+      false -> options
+
+    end
+
   end
 
   # Validates that the lenght value is a number, returns the options or {:error, error}
