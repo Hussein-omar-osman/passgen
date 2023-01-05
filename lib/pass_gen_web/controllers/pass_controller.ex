@@ -10,17 +10,12 @@ defmodule PassGenWeb.PassController do
     # conn
     # |> render("ack.json", params)
     # params = %{"length" => "20"}
-    # case PasswordGenerator.generate(params) do
-    #   {:ok, pass} -> json(conn, Map.merge(%{"password" => pass}, params))
-    #   {:error, error} -> json(conn, %{error: error})
-    # end
+    case PasswordGenerator.generate(params) do
+      {:ok, pass} -> json(conn, Map.merge(%{"password" => pass}, params))
+      {:error, error} -> json(conn, %{error: error})
+    end
     # PasswordGenerator.generate(params)
     json(conn, %{password: "pass"})
-  end
-
-  def check_params(params) do
-  #   case
-    params
   end
 
 end

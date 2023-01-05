@@ -91,7 +91,7 @@ defmodule PasswordGenerator do
         options
 
       false ->
-        {:error, "Only booleans allowed for options values"}
+        {:error, "Only booleans allowed for options values for numbers, uppercase and symbols"}
     end
   end
 
